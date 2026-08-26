@@ -103,14 +103,22 @@ tList<FaqItem>("faq.items");               // mảng object
 
 `src/proxy.ts` chọn theo thứ tự:
 
-1. Cookie `renlio.locale` — người dùng đã tự bấm, luôn thắng
-2. Header `Accept-Language` — tín hiệu thật về ngôn ngữ người dùng đọc được
-3. IP country (`x-vercel-ip-country` / `cf-ipcountry`) — **chỉ là dự phòng**
+1. Cookie `renlio.locale` — **chỉ được ghi khi người dùng tự bấm đổi ngôn ngữ**, không bao giờ ghi bởi suy luận tự động
+2. IP country (`x-vercel-ip-country` / `cf-ipcountry`) — ở Việt Nam rất nhiều người dùng Windows/Chrome tiếng Anh, nên vị trí phản ánh thị trường đúng hơn ngôn ngữ máy
+3. `Accept-Language` — bắt người Việt ở nước ngoài và khách quốc tế
 4. Mặc định `en`
 
 Chỉ đường dẫn gốc `/` bị redirect. Đã vào `/vi` hoặc `/en` thì giữ nguyên kể cả khi IP nói khác — **đây là điểm bắt buộc**: nếu redirect cứng theo IP, Googlebot (crawl từ IP Mỹ) sẽ không bao giờ index được bản tiếng Việt.
 
 Nếu deploy sau một CDN khác, thêm tên header quốc gia của CDN đó vào `detectLocale()`.
+
+**Không bao giờ để proxy ghi lại phỏng đoán của chính nó vào cookie.** Bản đầu mắc lỗi này: đoán sai một lần là người dùng bị khoá vào ngôn ngữ đó suốt một năm, và sửa thuật toán cũng không cứu được ai đã dính cookie cũ.
+
+Localhost không có header IP nên dev luôn rơi về `Accept-Language`. Muốn thử theo quốc gia thì giả lập header:
+
+```bash
+curl -s -o /dev/null -w "%{redirect_url}\n" -H "x-vercel-ip-country: VN" http://localhost:3000/
+```
 
 ## SEO & GEO
 

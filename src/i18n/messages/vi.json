@@ -331,7 +331,7 @@
 
   "footer": {
     "tagline": "Renlio phát hiện mọi khoản trừ tiền định kỳ từ sao kê ngân hàng và email hoá đơn của bạn, rồi nhắc trước ngày gia hạn.",
-    "contact": "Liên hệ: hello@renlio.com",
+    "contact": "Liên hệ: hello@renlio.site",
     "product": "Sản phẩm",
     "legal": "Pháp lý",
     "privacy": "Chính sách quyền riêng tư",
@@ -344,7 +344,7 @@
     "privacyUpdated": "Cập nhật lần cuối: 26/08/2026",
     "privacyBody": [
       "Renlio xử lý dữ liệu sao kê để phát hiện các khoản trừ tiền định kỳ. Phần phân tích trên trang chủ chạy hoàn toàn trong trình duyệt của bạn: nội dung file không được gửi tới server của Renlio.",
-      "Khi bạn đăng ký nhắc lịch thanh toán, Renlio lưu địa chỉ email của bạn cho đúng mục đích đó. Bạn có thể yêu cầu xoá bất cứ lúc nào bằng cách gửi thư tới hello@renlio.com.",
+      "Khi bạn đăng ký nhắc lịch thanh toán, Renlio lưu địa chỉ email của bạn cho đúng mục đích đó. Bạn có thể yêu cầu xoá bất cứ lúc nào bằng cách gửi thư tới hello@renlio.site.",
       "Renlio không bán, không chia sẻ và không đổi dữ liệu chi tiêu của bạn cho bất kỳ bên thứ ba nào. Renlio không lưu số thẻ, số tài khoản hay thông tin đăng nhập ngân hàng.",
       "Trang này chưa dùng cookie theo dõi hay công cụ phân tích của bên thứ ba. Nếu điều đó thay đổi, tài liệu này sẽ được cập nhật trước khi công cụ mới được bật."
     ],

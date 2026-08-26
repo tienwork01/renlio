@@ -38,11 +38,11 @@
 
 ## Trang / Pages
 
-- [Trang chủ tiếng Việt](https://renlio.com/vi): giới thiệu sản phẩm, demo phát hiện subscription, bảng giá, câu hỏi thường gặp.
-- [English home](https://renlio.com/en): product overview, live detection demo, pricing, FAQ.
-- [Chính sách quyền riêng tư](https://renlio.com/vi/privacy)
-- [Điều khoản sử dụng](https://renlio.com/vi/terms)
+- [Trang chủ tiếng Việt](https://renlio.site/vi): giới thiệu sản phẩm, demo phát hiện subscription, bảng giá, câu hỏi thường gặp.
+- [English home](https://renlio.site/en): product overview, live detection demo, pricing, FAQ.
+- [Chính sách quyền riêng tư](https://renlio.site/vi/privacy)
+- [Điều khoản sử dụng](https://renlio.site/vi/terms)
 
 ## Liên hệ / Contact
 
-- hello@renlio.com
+- hello@renlio.site

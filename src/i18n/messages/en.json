@@ -331,7 +331,7 @@
 
   "footer": {
     "tagline": "Renlio finds every recurring charge in your bank statements and receipt emails, then reminds you before each renewal.",
-    "contact": "Contact: hello@renlio.com",
+    "contact": "Contact: hello@renlio.site",
     "product": "Product",
     "legal": "Legal",
     "privacy": "Privacy policy",
@@ -344,7 +344,7 @@
     "privacyUpdated": "Last updated: 26 August 2026",
     "privacyBody": [
       "Renlio processes statement data to detect recurring charges. The analysis on the home page runs entirely in your browser: file contents are never sent to a Renlio server.",
-      "When you sign up for payment reminders, Renlio stores your email address for exactly that purpose. You can request deletion at any time by writing to hello@renlio.com.",
+      "When you sign up for payment reminders, Renlio stores your email address for exactly that purpose. You can request deletion at any time by writing to hello@renlio.site.",
       "Renlio does not sell, share or trade your spending data with any third party. Renlio does not store card numbers, account numbers or banking credentials.",
       "This site does not currently use tracking cookies or third-party analytics. If that changes, this document will be updated before any new tool is enabled."
     ],

@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+# Python bytecode cache (skill tooling)
+__pycache__/
+*.pyc

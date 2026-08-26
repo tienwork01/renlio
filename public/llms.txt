@@ -1,0 +1,48 @@
+# Renlio
+
+> Renlio là web app phát hiện và quản lý các gói subscription (dịch vụ trả phí
+> định kỳ) từ sao kê ngân hàng và email hoá đơn của người dùng, tổng hợp chi phí
+> theo tháng/năm và nhắc trước ngày bị trừ tiền. Miễn phí, không cần đăng nhập
+> ngân hàng.
+>
+> Renlio is a web app that detects and manages recurring subscriptions from bank
+> statements and receipt emails, totals their monthly and yearly cost, and warns
+> the user before each renewal. Free, no bank login required.
+
+## Bốn cách đưa subscription vào Renlio / Four ways to add subscriptions
+
+1. **Tạo tay** — nhập tên dịch vụ, số tiền, chu kỳ và ngày gia hạn. Dùng cho gói trả bằng tiền mặt, gói chia với người khác, dịch vụ trừ qua ví điện tử, và để bổ sung gói mà Renlio chưa tìm ra.
+2. **Import sao kê** — tải lên CSV, TSV, Excel hoặc PDF sao kê ngân hàng/thẻ. Tìm ra được nhiều gói nhất, kể cả gói không gửi email xác nhận.
+3. **Theo dõi Gmail** — liên kết Gmail hoặc Outlook một lần, Renlio tự nhận hoá đơn mới. Chỉ xin quyền đọc để tìm email hoá đơn, không có quyền gửi hay xoá thư; người dùng rút quyền được bất cứ lúc nào.
+4. **Forward email hoá đơn** — Renlio cấp một địa chỉ riêng, người dùng chuyển tiếp hoá đơn tới đó. Renlio chỉ thấy đúng những email được chủ động gửi, không cần quyền truy cập hộp thư.
+
+## Sự thật cốt lõi / Key facts
+
+- Nguồn dữ liệu: tạo tay, file sao kê ngân hàng hoặc thẻ (CSV, TSV, Excel, PDF), liên kết Gmail/Outlook, và forward email hoá đơn.
+- Không yêu cầu mật khẩu internet banking, mã OTP hay bất kỳ thông tin đăng nhập ngân hàng nào.
+- Phần demo trên trang chủ chạy hoàn toàn trong trình duyệt: nội dung sao kê không được gửi tới server.
+- Không lưu số thẻ và số tài khoản. Không bán hay chia sẻ dữ liệu chi tiêu cho bên thứ ba.
+- Mọi kết quả phát hiện đều đi qua bước người dùng xác nhận; mỗi gói có điểm tin cậy 35–99.
+- Giá: miễn phí, không cần thẻ tín dụng.
+- Renlio không huỷ gói giúp người dùng; việc huỷ do người dùng tự thực hiện trên trang nhà cung cấp.
+- Sao kê thẻ không thấy được giao dịch tiền mặt, nên tạo tay là cách để danh sách subscription thật sự đầy đủ.
+
+## Cách thuật toán hoạt động / How detection works
+
+- Chuẩn hoá mô tả giao dịch: gỡ tiền tố cổng thanh toán (POS, SQ *, PAYPAL *…), mã tham chiếu, số điện thoại và hậu tố địa lý.
+- Gom nhóm theo mô tả đã chuẩn hoá, tính khoảng cách ngày giữa các lần trừ tiền.
+- Chu kỳ nhận diện được và khoảng ngày tương ứng: hàng tuần 6–8, 2 tuần/lần 12–16, hàng tháng 25–35, 2 tháng/lần 55–67, hàng quý 84–98, 6 tháng/lần 172–195, hàng năm 348–382.
+- Điều kiện tối thiểu: lặp lại ít nhất 2 lần, chu kỳ đều, số tiền chênh nhau không quá 35%.
+- Nhận diện được cả định dạng ngày dd/mm/yyyy (Việt Nam) và mm/dd/yyyy (quốc tế), cả số tiền kiểu 260.000 và 15.99.
+- Tự phân biệt cột số tiền với cột số dư bằng quan hệ số dư[i] − số dư[i−1] ≈ số tiền[i].
+
+## Trang / Pages
+
+- [Trang chủ tiếng Việt](https://renlio.com/vi): giới thiệu sản phẩm, demo phát hiện subscription, bảng giá, câu hỏi thường gặp.
+- [English home](https://renlio.com/en): product overview, live detection demo, pricing, FAQ.
+- [Chính sách quyền riêng tư](https://renlio.com/vi/privacy)
+- [Điều khoản sử dụng](https://renlio.com/vi/terms)
+
+## Liên hệ / Contact
+
+- hello@renlio.com

@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* ==================================================================
+   Design tokens -> Tailwind theme
+   `inline` để utility tham chiếu trực tiếp biến CSS, nhờ đó dark mode và
+   section đảo màu chỉ cần ghi đè biến là mọi class tự đổi theo.
+   ================================================================== */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+
+  --color-money: var(--money);
+  --color-money-bg: var(--money-bg);
+  --color-money-line: var(--money-line);
+
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+
+  --color-btn: var(--btn);
+  --color-btn-hover: var(--btn-hover);
+  --color-btn-fg: var(--btn-fg);
+
+  --font-heading: var(--font-be-vietnam-pro), "Segoe UI", system-ui, sans-serif;
+  --font-body: var(--font-source-sans), "Segoe UI", system-ui, sans-serif;
+
+  --shadow-lift: 0 18px 40px -12px rgb(21 19 15 / 0.16);
+}
+
+/* ------------------------------------------------------------------
+   Paper & Ink
+   Neutral ngả giấy chứ không phải slate lạnh, nút màu mực thay vì màu
+   thương hiệu, và đúng MỘT hue thương hiệu (xanh rêu) + MỘT hue cảnh báo
+   (cam đất). Số tiền để màu mực và cỡ lớn — cỡ chữ là thứ nhấn mạnh, không
+   phải màu, nên trang không bị loang lổ.
+   ------------------------------------------------------------------ */
+:root {
+  /* Xanh rêu sâu: chỉ dùng cho link, icon, viền nhấn — không dùng cho nút */
+  --brand-50: #e9f3ee;
+  --brand-100: #cfe6dc;
+  --brand-500: #158a66;
+  --brand-600: #0f6b4f;
+  --brand-700: #0b5540;
+
+  /* Số tiền = màu mực. Nền cát chỉ dùng cho thẻ "sắp bị trừ" và chip cần duyệt */
+  --money: #15130f;
+  --money-bg: #f5eddc;
+  --money-line: #e4d4b3;
+
+  --ok: #0f6b4f;
+  --ok-bg: #e2f0e9;
+  --bad: #b3401f;
+  --bad-bg: #fbe7de;
+
+  --ink: #15130f;
+  --ink-2: #3b372f;
+  --muted: #665f54;
+  --faint: #756d5f;
+
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --surface-2: #f2efe9;
+  --line: #e6e1d8;
+  --line-strong: #d3ccbf;
+
+  /* Nút màu mực, chữ kem — cách làm của Linear/Ramp/Vercel */
+  --btn: #15130f;
+  --btn-hover: #2c281f;
+  --btn-fg: #faf8f5;
+
+  --focus: #0f6b4f;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-50: #14271f;
+    --brand-100: #1c3a30;
+    --brand-500: #35a37e;
+    --brand-600: #4fc39a;
+    --brand-700: #7ad6b6;
+
+    --money: #f5f1e9;
+    --money-bg: #2e2517;
+    --money-line: #55452a;
+
+    --ok: #4fc39a;
+    --ok-bg: #10291f;
+    --bad: #ff9068;
+    --bad-bg: #33190f;
+
+    --ink: #f5f1e9;
+    --ink-2: #ded8cc;
+    --muted: #a89f91;
+    --faint: #948b7d;
+
+    --bg: #0f0e0c;
+    --surface: #171512;
+    --surface-2: #1e1b17;
+    --line: #2c2822;
+    --line-strong: #423c33;
+
+    /* Đảo lại: nút màu kem, chữ màu mực */
+    --btn: #f5f1e9;
+    --btn-hover: #ffffff;
+    --btn-fg: #15130f;
+
+    --focus: #7ad6b6;
+
+    color-scheme: dark;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Section đảo màu: ghi đè token trong phạm vi cục bộ, mọi class
+   bg-surface / text-ink / border-line bên trong tự đổi theo.
+   ------------------------------------------------------------------ */
+.section-invert {
+  --bg: #15130f;
+  --surface: #201d18;
+  --surface-2: #191712;
+  --ink: #faf8f5;
+  --ink-2: #e6e0d5;
+  --muted: #a9a091;
+  --faint: #a9a091;
+  --line: #332e26;
+  --line-strong: #4a4338;
+  --brand-50: #1c3a30;
+  --brand-100: #24493c;
+  --brand-600: #5fcfa6;
+  --brand-700: #86dcbd;
+  --money: #faf8f5;
+  --money-bg: #2e2517;
+  --money-line: #55452a;
+  --ok: #5fcfa6;
+  --ok-bg: #123024;
+  --bad: #ff9068;
+  --bad-bg: #351a10;
+  --btn: #faf8f5;
+  --btn-hover: #ffffff;
+  --btn-fg: #15130f;
+  --focus: #86dcbd;
+  color-scheme: dark;
+}
+
+/* ==================================================================
+   Base
+   ================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body), sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--brand-100);
+    color: var(--ink);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* Con số tiền không nhảy cột khi giá trị đổi */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 500ms ease,
+      transform 500ms ease;
+  }
+
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

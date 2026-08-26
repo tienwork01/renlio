@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "title": "Renlio — Find every subscription you are paying for",
+    "description": "Renlio finds every subscription in your bank statement, totals what you spend each month, and reminds you before the next charge. Free, no bank login.",
+    "ogImageAlt": "Renlio: a bank statement turned into a list of subscriptions with the monthly total"
+  },
+
+  "a11y": {
+    "skip": "Skip to main content",
+    "mainNav": "Main navigation",
+    "langGroup": "Choose language",
+    "tabs": "Data source",
+    "resultsHeading": "Analysis results",
+    "footerProductNav": "Product links",
+    "footerLegalNav": "Legal links"
+  },
+
+  "nav": {
+    "demo": "Try it",
+    "sources": "Data sources",
+    "features": "Features",
+    "security": "Security",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Find my subscriptions"
+  },
+
+  "hero": {
+    "titleBefore": "You are paying for ",
+    "titleEm": "6 subscriptions",
+    "titleAfter": ". How many can you name?",
+    "lead": "Renlio reads your bank statements, receipt emails and Gmail to find every recurring charge, totals what it costs you each month, and reminds you before the next one hits.",
+    "cta": "Find my subscriptions",
+    "cta2": "What Renlio does",
+    "trust": ["Free", "No bank login", "Statement stays on your device"],
+    "figRaw": "Raw statement",
+    "figClean": "What Renlio sees",
+    "figNext": "Renews",
+    "figTotal": "Total across 8 subscriptions found",
+    "figTotalAmount": "$99.04",
+    "perMonth": "/mo",
+    "figCaption": "Renlio normalises messy statement descriptors into a list of services with the next renewal date for each.",
+    "rawSample": "08/14  NETFLIX.COM\n       LOS GATOS CA        -15.49\n08/01  OPENAI CHATGPT\n       SUBSCRIPTION        -20.00\n08/06  SPOTIFY USA\n       NEW YORK NY         -11.99",
+    "figItems": [
+      { "initial": "N", "name": "Netflix", "date": "2026-09-14", "dateLabel": "Sep 14", "amount": "$15.49" },
+      { "initial": "C", "name": "ChatGPT Plus", "date": "2026-09-01", "dateLabel": "Sep 1", "amount": "$20.00" },
+      { "initial": "S", "name": "Spotify", "date": "2026-09-06", "dateLabel": "Sep 6", "amount": "$11.99" }
+    ]
+  },
+
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Money leaves your account every month and nobody notices",
+    "lead": "Subscriptions are designed to be forgotten: charged automatically, no paper invoice, nobody asking whether you still use them.",
+    "stats": [
+      {
+        "value": "8 plans",
+        "label": "is the average number of subscriptions Renlio finds in a 12-month statement."
+      },
+      {
+        "value": "2–3 plans",
+        "label": "are usually ones people no longer remember paying for — a trial that auto-renewed, a deleted app, a gym they stopped visiting."
+      },
+      {
+        "value": "12 months",
+        "label": "is how much statement history Renlio needs to catch plans that only charge once a year."
+      }
+    ]
+  },
+
+  "demo": {
+    "eyebrow": "Try it",
+    "title": "Paste a statement. See what Renlio finds.",
+    "lead": "No account. No download. Pick a sample statement, or paste your own — every calculation runs inside this browser.",
+    "tabSample": "Sample statement",
+    "tabOwn": "My statement",
+    "inputLabel": "Transactions (CSV or pasted text)",
+    "inputHint": "One transaction per line: date, description, amount. Renlio detects the columns itself, even when a running balance column is present.",
+    "dropzone": "Drop a .csv or .txt file here, or click to choose one",
+    "analyze": "Find subscriptions",
+    "privacy": "Analysis runs 100% in your browser. No network request carries your statement — open the Network tab in DevTools and check for yourself.",
+    "emptyBefore": "Results will appear here once you press ",
+    "emptyStrong": "Find subscriptions",
+    "emptyAfter": ".",
+    "detailsTitle": "Which cycles and formats does Renlio recognise?",
+    "tableCaption": "Billing cycles Renlio recognises and the day ranges they match",
+    "thCycle": "Cycle",
+    "thRange": "Days between charges",
+    "thExample": "Example",
+    "cycleRows": [
+      { "cycle": "Weekly", "range": "6–8", "example": "News, meal plans" },
+      { "cycle": "Every 2 weeks", "range": "12–16", "example": "Data top-ups" },
+      { "cycle": "Monthly", "range": "25–35", "example": "Netflix, Spotify, gym" },
+      { "cycle": "Quarterly", "range": "84–98", "example": "Hosting, insurance" },
+      { "cycle": "Every 6 months", "range": "172–195", "example": "Course access" },
+      { "cycle": "Yearly", "range": "348–382", "example": "Domains, Amazon Prime" }
+    ],
+    "detailsBody": "Renlio reads CSV, TSV and Excel exports from most banks and cards, detecting the date, description, amount and balance columns on its own. It understands both dd/mm/yyyy and mm/dd/yyyy dates, and both 260.000 and 15.99 number formats. A charge only counts as a subscription when it repeats at least twice on a regular cycle with amounts within 35% of each other."
+  },
+
+  "results": {
+    "analyzing": "Analysing…",
+    "steps": ["Reading transactions", "Normalising merchant names", "Scoring cycles"],
+    "totalLabel": "What you are paying",
+    "perMonth": "/mo",
+    "perYear": "{amount} per year",
+    "foundLabel": "Subscriptions found",
+    "selectedNote": "Untick anything you do not want counted — this is exactly the confirmation step inside Renlio.",
+    "ignoredNote": "Skipped {groups} merchant groups that were not regular enough to be subscriptions (ride-hailing, coffee, utility bills) and {lines} unreadable lines.",
+    "nextCharge": "Next charge",
+    "inDays": "in {days} days",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "occurrences": "{count} charges in the statement",
+    "toggleLabel": "Count {name} in the total",
+    "soon": "Charging soon",
+    "emptyTitle": "No charges repeating on a cycle were found.",
+    "emptyHint": "A statement needs at least two charges from the same service. Try pasting 3–12 months of transactions.",
+    "errorTitle": "This data could not be read.",
+    "errorHint": "Each line needs a date, a description and an amount. For example: 08/12/2026, NETFLIX.COM, -15.49",
+    "errorEmpty": "Paste a statement or pick the sample one first.",
+    "confidence": {
+      "high": "Confident",
+      "medium": "Worth reviewing",
+      "low": "Uncertain"
+    },
+    "cycle": {
+      "weekly": "weekly",
+      "biweekly": "every 2 weeks",
+      "monthly": "monthly",
+      "bimonthly": "every 2 months",
+      "quarterly": "quarterly",
+      "semiannual": "every 6 months",
+      "annual": "yearly"
+    }
+  },
+
+  "reminder": {
+    "eyebrow": "Payment reminders",
+    "title": "Want Renlio to warn you 3 days before each charge?",
+    "lead": "Add your email to get reminders for the plans found above, plus a monthly summary of what you are spending.",
+    "emailLabel": "Your email",
+    "emailPlaceholder": "you@email.com",
+    "submit": "Turn on reminders",
+    "sending": "Sending…",
+    "invalidEmail": "That email does not look right. Mind checking it?",
+    "ok": "Done. Renlio will warn you before each charge.",
+    "okStep2": "Done. One quick question below.",
+    "error": "That did not go through. Please try again in a minute.",
+    "step2Title": "Which bank do you use? (helps us prioritise support)",
+    "bankPlaceholder": "Choose a bank",
+    "bankOther": "Another bank",
+    "bankThanks": "Noted. Thank you."
+  },
+
+  "dashboard": {
+    "eyebrow": "Dashboard",
+    "title": "Every subscription cost on one screen",
+    "lead": "Monthly and yearly totals, the full list of plans you are on, and upcoming charges ordered by date.",
+    "svgTitle": "Renlio dashboard",
+    "svgDesc": "Dashboard illustration: 2,378,917 VND per month total, 8 active subscriptions, a six-month cost chart, and a list of four upcoming charges.",
+    "tile1": "TOTAL PER MONTH",
+    "tile1Value": "2.378.917₫",
+    "tile1Sub": "28,547,000₫ per year",
+    "tile2": "ACTIVE PLANS",
+    "tile2Value": "8",
+    "tile2Sub": "6 monthly · 1 yearly · 1 needs review",
+    "tile3": "CHARGING SOON",
+    "tile3Value": "2 days",
+    "tile3Sub": "VieON · 102.000₫ · Aug 28",
+    "chartTitle": "Subscription cost over the last 6 months",
+    "chartNote": "Rising because new plans were added over time",
+    "upcoming": "Upcoming charges",
+    "upcomingItems": [
+      { "name": "VieON", "detail": "Aug 28 · 102.000₫" },
+      { "name": "Adobe Creative Cloud", "detail": "Sep 2 · 545.000₫" },
+      { "name": "Spotify", "detail": "Sep 5 · 59.000₫" },
+      { "name": "California Fitness", "detail": "Sep 8 · 1.290.000₫" }
+    ],
+    "caption": "The Renlio dashboard built from the sample statement in the Try it section above."
+  },
+
+  "sources": {
+    "eyebrow": "Data sources",
+    "title": "Four ways to get subscriptions into Renlio",
+    "lead": "No single source sees everything. Renlio combines all four — and whatever is still missing, you add by hand.",
+    "bestForLabel": "Best for",
+    "items": [
+      {
+        "icon": "pencil",
+        "title": "Add by hand",
+        "bestFor": "Plans that never touch a card",
+        "body": "A gym paid in cash, a plan split with friends, a service billed through an e-wallet. Type the name, amount, cycle and next renewal date — about 30 seconds. This is also how you add anything Renlio did not find."
+      },
+      {
+        "icon": "statement",
+        "title": "Import a statement",
+        "bestFor": "Finding the most plans",
+        "body": "Upload a CSV, Excel or PDF bank and card statement. Renlio looks for charges that repeat on a cycle, so it catches plans that never send a confirmation email. You can try it in the section above."
+      },
+      {
+        "icon": "gmail",
+        "title": "Watch Gmail",
+        "bestFor": "Hands-off, keeps itself current",
+        "body": "Connect Gmail or Outlook once and Renlio picks up new receipts and updates renewal dates on its own. Renlio requests read access to find receipt emails; it cannot send or delete anything."
+      },
+      {
+        "icon": "forward",
+        "title": "Forward receipts",
+        "bestFor": "Not granting inbox access",
+        "body": "Renlio gives you your own address. Forward a receipt there and you are done — Renlio only ever sees the emails you deliberately send, nothing else in your inbox."
+      }
+    ]
+  },
+
+  "features": {
+    "eyebrow": "Features",
+    "title": "What Renlio does with that data",
+    "items": [
+      {
+        "icon": "check",
+        "title": "You confirm, not the AI",
+        "body": "Every plan detected from a statement or an email goes through a review screen with a confidence score. You keep, edit or drop each line before Renlio saves anything."
+      },
+      {
+        "icon": "chart",
+        "title": "Total-cost dashboard",
+        "body": "Monthly and yearly subscription totals, all four sources merged into one list, sortable by amount or by next renewal date."
+      },
+      {
+        "icon": "bell",
+        "title": "Warned before the charge",
+        "body": "An email a few days before a plan is billed, so you can still decide to keep or cancel — instead of finding out after the money is gone."
+      }
+    ]
+  },
+
+  "security": {
+    "eyebrow": "Security & privacy",
+    "title": "Renlio does not ask for access it does not use",
+    "lead": "An app that reads bank statements has to prove it is safe, not just say so. Here is what Renlio does and does not do.",
+    "items": [
+      {
+        "title": "No bank login",
+        "body": "Renlio never asks for your internet banking password or an OTP code. You hand it a statement file you exported yourself."
+      },
+      {
+        "title": "Analysis on your device",
+        "body": "The demo on this page reads and analyses your statement entirely in JavaScript, in your browser. No network request carries the file contents."
+      },
+      {
+        "title": "No card numbers stored",
+        "body": "Renlio only needs the date, description and amount of a transaction. Card and account numbers are not stored anywhere."
+      },
+      {
+        "title": "Delete everything in one click",
+        "body": "You can remove all of your data from Renlio at any time, without emailing a request or waiting for approval."
+      },
+      {
+        "title": "Minimal Gmail access",
+        "body": "Renlio only requests read access to find receipt emails; it cannot send or delete messages. You can revoke access at any time in your Google account security settings — or skip it entirely and forward receipts instead."
+      },
+      {
+        "title": "Your data is not for sale",
+        "body": "Renlio does not sell, share or trade your spending data with any third party."
+      }
+    ]
+  },
+
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Free. No card needed.",
+    "planName": "Renlio",
+    "amount": "$0",
+    "note": "No limit on plans, no limit on imports.",
+    "perks": [
+      "All four inputs: by hand, statements, connected Gmail, forwarded receipts",
+      "Unlimited subscription detection from statements",
+      "Monthly and yearly total-cost dashboard",
+      "Payment reminders by email",
+      "Delete all your data whenever you want"
+    ],
+    "cta": "Start with your statement"
+  },
+
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "What people ask before trusting Renlio",
+    "items": [
+      {
+        "q": "Does Renlio need my internet banking password?",
+        "a": "No. Renlio never asks for a password, an OTP code or any banking credential. You upload a statement file exported from your banking app, or paste a few transaction lines into the page."
+      },
+      {
+        "q": "Is my statement uploaded to a server?",
+        "a": "The analysis on this page runs entirely in your browser: the file is read by JavaScript on your own machine, and no network request carries its contents. You can verify this in the Network tab of DevTools."
+      },
+      {
+        "q": "What about plans I pay in cash or through an e-wallet?",
+        "a": "You add those by hand. Type the service name, amount, cycle and next renewal date, and Renlio counts it in your total and reminds you like any other plan. A card statement cannot see cash, so adding by hand is how your list becomes genuinely complete."
+      },
+      {
+        "q": "If I connect Gmail, what can Renlio see?",
+        "a": "Renlio requests read access to find receipt emails and cannot send or delete messages; you can revoke it at any time in your Google account security settings. If you would rather not grant inbox access, use forwarding instead: Renlio gives you your own address and only ever sees the emails you deliberately send there."
+      },
+      {
+        "q": "Which banks and file formats does Renlio support?",
+        "a": "Renlio reads CSV, TSV and Excel exports from most banks and credit cards, detecting the date, description, amount and balance columns automatically. The demo on this page accepts CSV and pasted text, including Vietnamese statements that use dots as thousands separators and dd/mm/yyyy dates."
+      },
+      {
+        "q": "What if Renlio gets it wrong?",
+        "a": "Every subscription Renlio finds has to pass through your review before it is saved. Each one carries a confidence score based on how many times it repeated, how regular the cycle is, and how stable the amount is — so you know which ones to double-check. Renlio does not trust the machine blindly."
+      },
+      {
+        "q": "Does Renlio cancel subscriptions for me?",
+        "a": "No. Renlio detects, totals and reminds; cancelling is something you do on the provider's own site. Renlio has no access to your accounts at those services."
+      },
+      {
+        "q": "Is Renlio really free?",
+        "a": "Yes. Subscription detection, the total-cost dashboard and payment reminders are all free, with no credit card required."
+      }
+    ]
+  },
+
+  "finalCta": {
+    "title": "Your statement already knows. It takes 2 minutes for you to know too.",
+    "lead": "Paste your statement in the box above to see the real number, or leave your email and Renlio will warn you before the next charge."
+  },
+
+  "footer": {
+    "tagline": "Renlio finds every recurring charge in your bank statements and receipt emails, then reminds you before each renewal.",
+    "contact": "Contact: hello@renlio.com",
+    "product": "Product",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "copyright": "© 2026 Renlio. Amounts shown in examples are illustrative data."
+  },
+
+  "legal": {
+    "privacyTitle": "Privacy policy",
+    "privacyUpdated": "Last updated: 26 August 2026",
+    "privacyBody": [
+      "Renlio processes statement data to detect recurring charges. The analysis on the home page runs entirely in your browser: file contents are never sent to a Renlio server.",
+      "When you sign up for payment reminders, Renlio stores your email address for exactly that purpose. You can request deletion at any time by writing to hello@renlio.com.",
+      "Renlio does not sell, share or trade your spending data with any third party. Renlio does not store card numbers, account numbers or banking credentials.",
+      "This site does not currently use tracking cookies or third-party analytics. If that changes, this document will be updated before any new tool is enabled."
+    ],
+    "termsTitle": "Terms of use",
+    "termsUpdated": "Last updated: 26 August 2026",
+    "termsBody": [
+      "Renlio is a tool that helps you track subscription costs. Detection results are produced algorithmically and need your own review before you rely on them for financial decisions.",
+      "Renlio is not a financial institution, does not give investment advice and does not make transactions on your behalf. Cancelling a service is something you do on the provider's own site.",
+      "You are responsible for the data you upload and confirm that you only use statements you are entitled to.",
+      "The service is provided as is. Renlio works to be accurate but does not guarantee that every one of your subscriptions will be detected."
+    ],
+    "backHome": "Back to home"
+  }
+}

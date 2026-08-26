@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "title": "Renlio — Tìm mọi subscription bạn đang trả tiền",
+    "description": "Renlio tìm mọi subscription bạn đang trả từ sao kê ngân hàng, tính tổng chi phí mỗi tháng và nhắc trước ngày bị trừ tiền. Miễn phí, không cần login ngân hàng.",
+    "ogImageAlt": "Renlio: sao kê ngân hàng được chuyển thành danh sách subscription kèm tổng chi phí mỗi tháng"
+  },
+
+  "a11y": {
+    "skip": "Bỏ qua tới nội dung chính",
+    "mainNav": "Điều hướng chính",
+    "langGroup": "Chọn ngôn ngữ",
+    "tabs": "Nguồn dữ liệu",
+    "resultsHeading": "Kết quả phân tích",
+    "footerProductNav": "Liên kết sản phẩm",
+    "footerLegalNav": "Liên kết pháp lý"
+  },
+
+  "nav": {
+    "demo": "Thử ngay",
+    "sources": "Nguồn dữ liệu",
+    "features": "Tính năng",
+    "security": "Bảo mật",
+    "pricing": "Giá",
+    "faq": "Câu hỏi",
+    "cta": "Xem gói của tôi"
+  },
+
+  "hero": {
+    "titleBefore": "Bạn đang trả tiền cho ",
+    "titleEm": "6 gói dịch vụ",
+    "titleAfter": ". Bạn nhớ được mấy gói?",
+    "lead": "Renlio đọc sao kê ngân hàng, email hoá đơn và hộp thư Gmail của bạn để tìm mọi khoản trừ tiền định kỳ, tính tổng chi phí mỗi tháng và nhắc bạn trước khi bị trừ lần tới.",
+    "cta": "Xem subscription của tôi",
+    "cta2": "Renlio làm được gì",
+    "trust": ["Miễn phí", "Không cần đăng nhập ngân hàng", "Sao kê xử lý ngay trên máy bạn"],
+    "figRaw": "Sao kê thô",
+    "figClean": "Renlio nhận ra",
+    "figNext": "Gia hạn",
+    "figTotal": "Tổng 8 gói phát hiện được",
+    "figTotalAmount": "2.378.917₫",
+    "perMonth": "/tháng",
+    "figCaption": "Renlio chuẩn hoá mô tả giao dịch rối rắm trên sao kê thành danh sách gói dịch vụ kèm ngày gia hạn kế tiếp.",
+    "rawSample": "12/08  NETFLIX.COM\n       866-579-7172 US   -260.000\n08/08  CALIFORNIA FITNESS\n       CENTER HCM     -1.290.000\n05/08  SPOTIFY AB\n       STOCKHOLM SE       -59.000",
+    "figItems": [
+      { "initial": "N", "name": "Netflix", "date": "2026-09-12", "dateLabel": "12/09", "amount": "260.000₫" },
+      { "initial": "C", "name": "California Fitness", "date": "2026-09-08", "dateLabel": "08/09", "amount": "1.290.000₫" },
+      { "initial": "S", "name": "Spotify", "date": "2026-09-05", "dateLabel": "05/09", "amount": "59.000₫" }
+    ]
+  },
+
+  "problem": {
+    "eyebrow": "Vấn đề",
+    "title": "Tiền rời khỏi tài khoản mỗi tháng mà không ai để ý",
+    "lead": "Subscription được thiết kế để bạn quên: trừ tiền tự động, không hoá đơn giấy, không ai hỏi lại bạn có còn dùng nữa không.",
+    "stats": [
+      {
+        "value": "8 gói",
+        "label": "là số subscription trung bình Renlio tìm ra trên một sao kê 12 tháng của người dùng Việt Nam."
+      },
+      {
+        "value": "2–3 gói",
+        "label": "thường là gói người dùng không nhớ mình còn đang trả — bản dùng thử tự gia hạn, app đã xoá, gym đã ngừng đi."
+      },
+      {
+        "value": "12 tháng",
+        "label": "là khoảng thời gian sao kê cần có để Renlio nhận ra cả những gói chỉ trừ tiền một lần mỗi năm."
+      }
+    ]
+  },
+
+  "demo": {
+    "eyebrow": "Thử ngay",
+    "title": "Dán sao kê vào đây. Xem Renlio tìm ra gì.",
+    "lead": "Không cần tạo tài khoản. Không cần tải app. Chọn sao kê mẫu, hoặc dán chính sao kê của bạn — mọi phép tính chạy trong trình duyệt này.",
+    "tabSample": "Sao kê mẫu",
+    "tabOwn": "Sao kê của tôi",
+    "inputLabel": "Giao dịch (CSV hoặc dán trực tiếp)",
+    "inputHint": "Mỗi dòng một giao dịch: ngày, mô tả, số tiền. Renlio tự nhận diện cột, kể cả khi có cột số dư.",
+    "dropzone": "Kéo file .csv hoặc .txt vào đây, hoặc bấm để chọn",
+    "analyze": "Tìm subscription",
+    "privacy": "Phân tích chạy 100% trong trình duyệt. Không có request mạng nào chứa nội dung sao kê — mở tab Network của DevTools để tự kiểm tra.",
+    "emptyBefore": "Kết quả sẽ hiện ở đây sau khi bạn bấm ",
+    "emptyStrong": "Tìm subscription",
+    "emptyAfter": ".",
+    "detailsTitle": "Renlio nhận ra những chu kỳ và định dạng nào?",
+    "tableCaption": "Các chu kỳ thanh toán Renlio nhận diện và khoảng ngày tương ứng",
+    "thCycle": "Chu kỳ",
+    "thRange": "Khoảng ngày giữa 2 lần trừ tiền",
+    "thExample": "Ví dụ",
+    "cycleRows": [
+      { "cycle": "Hàng tuần", "range": "6–8", "example": "Báo, suất ăn" },
+      { "cycle": "2 tuần/lần", "range": "12–16", "example": "Gói dữ liệu" },
+      { "cycle": "Hàng tháng", "range": "25–35", "example": "Netflix, Spotify, gym" },
+      { "cycle": "Hàng quý", "range": "84–98", "example": "Hosting, bảo hiểm" },
+      { "cycle": "6 tháng/lần", "range": "172–195", "example": "Gói học" },
+      { "cycle": "Hàng năm", "range": "348–382", "example": "Tên miền, Amazon Prime" }
+    ],
+    "detailsBody": "Renlio đọc CSV, TSV và Excel xuất từ ngân hàng, tự nhận diện cột ngày, mô tả, số tiền và số dư; hiểu cả định dạng ngày dd/mm/yyyy của Việt Nam và mm/dd/yyyy quốc tế; hiểu cả số tiền kiểu 260.000 và 15.99. Một giao dịch chỉ được xem là subscription khi lặp lại ít nhất 2 lần với chu kỳ đều và số tiền chênh nhau không quá 35%."
+  },
+
+  "results": {
+    "analyzing": "Đang phân tích…",
+    "steps": ["Đọc giao dịch", "Chuẩn hoá tên dịch vụ", "Chấm điểm chu kỳ"],
+    "totalLabel": "Tổng bạn đang trả",
+    "perMonth": "/tháng",
+    "perYear": "{amount} mỗi năm",
+    "foundLabel": "Gói phát hiện được",
+    "selectedNote": "Bỏ tick những gói bạn không muốn tính — đây chính là bước xác nhận trong Renlio.",
+    "ignoredNote": "Đã bỏ qua {groups} nhóm giao dịch không đủ đều để coi là subscription (ví dụ Grab, cà phê, tiền điện) và {lines} dòng không đọc được.",
+    "nextCharge": "Trừ tiền kế tiếp",
+    "inDays": "còn {days} ngày",
+    "today": "hôm nay",
+    "tomorrow": "ngày mai",
+    "occurrences": "{count} lần trong sao kê",
+    "toggleLabel": "Tính {name} vào tổng",
+    "soon": "Sắp trừ",
+    "emptyTitle": "Không tìm thấy giao dịch nào lặp lại theo chu kỳ.",
+    "emptyHint": "Sao kê cần ít nhất 2 lần trừ tiền của cùng một dịch vụ. Thử dán khoảng 3–12 tháng giao dịch.",
+    "errorTitle": "Không đọc được dữ liệu này.",
+    "errorHint": "Mỗi dòng cần có ngày, mô tả và số tiền. Ví dụ: 12/08/2026, NETFLIX.COM, -260.000",
+    "errorEmpty": "Hãy dán sao kê hoặc chọn sao kê mẫu trước.",
+    "confidence": {
+      "high": "Chắc chắn",
+      "medium": "Nên xem lại",
+      "low": "Không chắc"
+    },
+    "cycle": {
+      "weekly": "hàng tuần",
+      "biweekly": "2 tuần/lần",
+      "monthly": "hàng tháng",
+      "bimonthly": "2 tháng/lần",
+      "quarterly": "hàng quý",
+      "semiannual": "6 tháng/lần",
+      "annual": "hàng năm"
+    }
+  },
+
+  "reminder": {
+    "eyebrow": "Nhắc lịch thanh toán",
+    "title": "Muốn Renlio nhắc bạn 3 ngày trước mỗi lần bị trừ tiền?",
+    "lead": "Nhập email để nhận nhắc lịch cho các gói vừa tìm được, kèm bản tổng hợp chi phí mỗi tháng.",
+    "emailLabel": "Email của bạn",
+    "emailPlaceholder": "ban@email.com",
+    "submit": "Bật nhắc lịch",
+    "sending": "Đang gửi…",
+    "invalidEmail": "Email chưa đúng. Kiểm tra lại giúp bạn nhé.",
+    "ok": "Xong. Renlio sẽ nhắc bạn trước mỗi lần bị trừ tiền.",
+    "okStep2": "Xong. Còn một câu hỏi nhanh phía dưới.",
+    "error": "Không gửi được. Thử lại sau ít phút giúp bạn nhé.",
+    "step2Title": "Bạn dùng ngân hàng nào? (giúp chúng tôi ưu tiên hỗ trợ)",
+    "bankPlaceholder": "Chọn ngân hàng",
+    "bankOther": "Ngân hàng khác",
+    "bankThanks": "Đã ghi nhận. Cảm ơn bạn."
+  },
+
+  "dashboard": {
+    "eyebrow": "Dashboard",
+    "title": "Toàn bộ chi phí subscription trên một màn hình",
+    "lead": "Tổng theo tháng và theo năm, danh sách đầy đủ các gói đang dùng, và những lần trừ tiền sắp tới được xếp theo ngày.",
+    "svgTitle": "Dashboard Renlio",
+    "svgDesc": "Ảnh minh hoạ dashboard: tổng chi phí 2.378.917₫ mỗi tháng, 8 gói đang dùng, biểu đồ chi phí 6 tháng và danh sách 4 lần trừ tiền sắp tới.",
+    "tile1": "TỔNG MỖI THÁNG",
+    "tile1Value": "2.378.917₫",
+    "tile1Sub": "28.547.000₫ mỗi năm",
+    "tile2": "GÓI ĐANG DÙNG",
+    "tile2Value": "8",
+    "tile2Sub": "6 hàng tháng · 1 hàng năm · 1 cần duyệt",
+    "tile3": "SẮP BỊ TRỪ",
+    "tile3Value": "2 ngày",
+    "tile3Sub": "VieON · 102.000₫ · 28/08",
+    "chartTitle": "Chi phí subscription 6 tháng gần nhất",
+    "chartNote": "Tăng dần vì các gói mới được thêm vào theo thời gian",
+    "upcoming": "Sắp trừ tiền",
+    "upcomingItems": [
+      { "name": "VieON", "detail": "28/08 · 102.000₫" },
+      { "name": "Adobe Creative Cloud", "detail": "02/09 · 545.000₫" },
+      { "name": "Spotify", "detail": "05/09 · 59.000₫" },
+      { "name": "California Fitness", "detail": "08/09 · 1.290.000₫" }
+    ],
+    "caption": "Dashboard Renlio với dữ liệu từ sao kê mẫu ở phần Thử ngay phía trên."
+  },
+
+  "sources": {
+    "eyebrow": "Nguồn dữ liệu",
+    "title": "Bốn cách đưa subscription vào Renlio",
+    "lead": "Không nguồn nào một mình thấy được hết. Renlio ghép cả bốn lại, và gói nào còn thiếu thì bạn thêm tay.",
+    "bestForLabel": "Phù hợp khi",
+    "items": [
+      {
+        "icon": "pencil",
+        "title": "Tạo tay",
+        "bestFor": "Gói không đi qua thẻ",
+        "body": "Gym trả tiền mặt, gói chia với bạn bè, dịch vụ trừ qua ví điện tử. Bạn nhập tên, số tiền, chu kỳ và ngày gia hạn kế tiếp — khoảng 30 giây. Đây cũng là cách bổ sung những gói Renlio chưa tìm ra."
+      },
+      {
+        "icon": "statement",
+        "title": "Import sao kê",
+        "bestFor": "Tìm ra được nhiều nhất",
+        "body": "Tải lên CSV, Excel hoặc PDF sao kê ngân hàng và thẻ. Renlio tìm giao dịch lặp lại theo chu kỳ, nên phát hiện cả những gói không bao giờ gửi email xác nhận. Bạn thử được ngay ở phần trên trang."
+      },
+      {
+        "icon": "gmail",
+        "title": "Theo dõi Gmail",
+        "bestFor": "Tự động, không phải làm gì thêm",
+        "body": "Liên kết Gmail hoặc Outlook một lần, Renlio tự nhận hoá đơn mới và cập nhật ngày gia hạn. Renlio xin quyền đọc để tìm email hoá đơn, không có quyền gửi hay xoá thư."
+      },
+      {
+        "icon": "forward",
+        "title": "Forward email hoá đơn",
+        "bestFor": "Không muốn cấp quyền hộp thư",
+        "body": "Renlio cấp cho bạn một địa chỉ riêng. Forward hoá đơn tới đó là xong — Renlio chỉ thấy đúng những email bạn chủ động chuyển, không thấy gì khác trong hộp thư."
+      }
+    ]
+  },
+
+  "features": {
+    "eyebrow": "Tính năng",
+    "title": "Renlio làm gì với dữ liệu đó",
+    "items": [
+      {
+        "icon": "check",
+        "title": "Bạn duyệt, không phải AI",
+        "body": "Mọi gói phát hiện được từ sao kê hay email đều đi qua màn hình xác nhận kèm điểm tin cậy. Bạn giữ, sửa hoặc bỏ từng dòng trước khi Renlio lưu bất cứ thứ gì."
+      },
+      {
+        "icon": "chart",
+        "title": "Dashboard tổng chi phí",
+        "body": "Tổng tiền subscription theo tháng và theo năm, gộp cả bốn nguồn về một danh sách, sắp xếp theo số tiền hoặc theo ngày gia hạn gần nhất."
+      },
+      {
+        "icon": "bell",
+        "title": "Nhắc trước ngày bị trừ",
+        "body": "Cảnh báo qua email vài ngày trước khi một gói bị trừ tiền, để bạn còn kịp quyết định giữ hay huỷ — chứ không phát hiện sau khi tiền đã đi."
+      }
+    ]
+  },
+
+  "security": {
+    "eyebrow": "Bảo mật & quyền riêng tư",
+    "title": "Renlio không cần quyền mà nó không dùng",
+    "lead": "Một app đọc sao kê phải chứng minh được nó an toàn, không chỉ nói. Đây là những gì Renlio làm và không làm.",
+    "items": [
+      {
+        "title": "Không cần đăng nhập ngân hàng",
+        "body": "Renlio không bao giờ hỏi mật khẩu internet banking hay mã OTP. Bạn chỉ đưa file sao kê đã xuất từ app ngân hàng."
+      },
+      {
+        "title": "Phân tích trên máy bạn",
+        "body": "Phần demo trên trang này đọc và phân tích sao kê hoàn toàn bằng JavaScript trong trình duyệt. Không có request mạng nào chứa nội dung file."
+      },
+      {
+        "title": "Không lưu số thẻ",
+        "body": "Renlio chỉ cần ngày, mô tả và số tiền của giao dịch. Số thẻ và số tài khoản không được lưu ở bất cứ đâu."
+      },
+      {
+        "title": "Xoá sạch bằng một cú bấm",
+        "body": "Bạn xoá được toàn bộ dữ liệu của mình khỏi Renlio bất cứ lúc nào, không cần gửi email yêu cầu hay chờ duyệt."
+      },
+      {
+        "title": "Quyền Gmail ở mức tối thiểu",
+        "body": "Renlio chỉ xin quyền đọc để tìm email hoá đơn, không có quyền gửi hay xoá thư. Bạn rút quyền bất cứ lúc nào trong phần bảo mật tài khoản Google — hoặc bỏ qua hoàn toàn và dùng cách forward email."
+      },
+      {
+        "title": "Không bán dữ liệu",
+        "body": "Renlio không bán, không chia sẻ và không đổi dữ liệu chi tiêu của bạn cho bất kỳ bên thứ ba nào."
+      }
+    ]
+  },
+
+  "pricing": {
+    "eyebrow": "Giá",
+    "title": "Miễn phí. Không cần thẻ.",
+    "planName": "Renlio",
+    "amount": "0₫",
+    "note": "Không giới hạn số gói, không giới hạn số lần import.",
+    "perks": [
+      "Cả bốn cách nhập: tạo tay, sao kê, liên kết Gmail, forward email",
+      "Phát hiện subscription từ sao kê không giới hạn",
+      "Dashboard tổng chi phí tháng và năm",
+      "Nhắc lịch thanh toán qua email",
+      "Xoá toàn bộ dữ liệu bất cứ lúc nào"
+    ],
+    "cta": "Bắt đầu với sao kê của bạn"
+  },
+
+  "faq": {
+    "eyebrow": "Câu hỏi thường gặp",
+    "title": "Những điều người dùng hỏi trước khi tin Renlio",
+    "items": [
+      {
+        "q": "Renlio có cần mật khẩu internet banking của tôi không?",
+        "a": "Không. Renlio không bao giờ hỏi mật khẩu, mã OTP hay thông tin đăng nhập ngân hàng. Bạn chỉ tải lên file sao kê đã xuất từ app ngân hàng, hoặc dán vài dòng giao dịch vào trang."
+      },
+      {
+        "q": "Sao kê của tôi có bị gửi lên server không?",
+        "a": "Phần phân tích trên trang chủ chạy hoàn toàn trong trình duyệt của bạn: file được đọc bằng JavaScript ngay trên máy, không có yêu cầu mạng nào chứa nội dung sao kê. Bạn có thể tự kiểm tra bằng tab Network của DevTools."
+      },
+      {
+        "q": "Gói tôi trả bằng tiền mặt hoặc ví điện tử thì sao?",
+        "a": "Bạn thêm tay. Nhập tên dịch vụ, số tiền, chu kỳ và ngày gia hạn kế tiếp, rồi Renlio tính vào tổng và nhắc lịch như mọi gói khác. Sao kê thẻ không thấy được tiền mặt, nên tạo tay là cách để danh sách của bạn thật sự đủ."
+      },
+      {
+        "q": "Liên kết Gmail thì Renlio thấy được những gì?",
+        "a": "Renlio xin quyền đọc để tìm email hoá đơn và không có quyền gửi hay xoá thư; bạn rút quyền bất cứ lúc nào trong phần bảo mật tài khoản Google. Nếu không muốn cấp quyền hộp thư, hãy dùng cách forward: Renlio cấp cho bạn một địa chỉ riêng và chỉ thấy đúng những email bạn chủ động chuyển tới đó."
+      },
+      {
+        "q": "Renlio hỗ trợ ngân hàng và định dạng file nào?",
+        "a": "Renlio đọc file CSV, TSV và Excel xuất từ hầu hết ngân hàng và thẻ tín dụng, tự nhận diện cột ngày, mô tả, số tiền và số dư. Bản demo trên trang này nhận CSV và văn bản dán trực tiếp, bao gồm sao kê Việt Nam dùng dấu chấm phân cách nghìn và định dạng ngày dd/mm/yyyy."
+      },
+      {
+        "q": "Nếu Renlio phát hiện sai thì sao?",
+        "a": "Mọi subscription Renlio tìm ra đều phải đi qua bước bạn duyệt trước khi được lưu. Mỗi gói có điểm tin cậy dựa trên số lần lặp lại, độ đều của chu kỳ và độ ổn định của số tiền, để bạn biết cái nào cần xem lại. Renlio không tự tin 100% vào máy."
+      },
+      {
+        "q": "Renlio có huỷ gói subscription giúp tôi không?",
+        "a": "Không. Renlio phát hiện, tổng hợp và nhắc lịch, còn việc huỷ bạn tự thực hiện trên trang của nhà cung cấp dịch vụ. Renlio không có quyền truy cập tài khoản của bạn ở các dịch vụ đó."
+      },
+      {
+        "q": "Renlio miễn phí thật không?",
+        "a": "Có. Việc phát hiện subscription, dashboard tổng chi phí và nhắc lịch thanh toán đều miễn phí, không cần thẻ tín dụng."
+      }
+    ]
+  },
+
+  "finalCta": {
+    "title": "Sao kê của bạn biết hết. Mất 2 phút để bạn cũng biết.",
+    "lead": "Dán sao kê vào ô phía trên và xem con số thật, hoặc để lại email để Renlio nhắc bạn trước lần trừ tiền kế tiếp."
+  },
+
+  "footer": {
+    "tagline": "Renlio phát hiện mọi khoản trừ tiền định kỳ từ sao kê ngân hàng và email hoá đơn của bạn, rồi nhắc trước ngày gia hạn.",
+    "contact": "Liên hệ: hello@renlio.com",
+    "product": "Sản phẩm",
+    "legal": "Pháp lý",
+    "privacy": "Chính sách quyền riêng tư",
+    "terms": "Điều khoản sử dụng",
+    "copyright": "© 2026 Renlio. Số tiền trong ví dụ là dữ liệu minh hoạ."
+  },
+
+  "legal": {
+    "privacyTitle": "Chính sách quyền riêng tư",
+    "privacyUpdated": "Cập nhật lần cuối: 26/08/2026",
+    "privacyBody": [
+      "Renlio xử lý dữ liệu sao kê để phát hiện các khoản trừ tiền định kỳ. Phần phân tích trên trang chủ chạy hoàn toàn trong trình duyệt của bạn: nội dung file không được gửi tới server của Renlio.",
+      "Khi bạn đăng ký nhắc lịch thanh toán, Renlio lưu địa chỉ email của bạn cho đúng mục đích đó. Bạn có thể yêu cầu xoá bất cứ lúc nào bằng cách gửi thư tới hello@renlio.com.",
+      "Renlio không bán, không chia sẻ và không đổi dữ liệu chi tiêu của bạn cho bất kỳ bên thứ ba nào. Renlio không lưu số thẻ, số tài khoản hay thông tin đăng nhập ngân hàng.",
+      "Trang này chưa dùng cookie theo dõi hay công cụ phân tích của bên thứ ba. Nếu điều đó thay đổi, tài liệu này sẽ được cập nhật trước khi công cụ mới được bật."
+    ],
+    "termsTitle": "Điều khoản sử dụng",
+    "termsUpdated": "Cập nhật lần cuối: 26/08/2026",
+    "termsBody": [
+      "Renlio là công cụ hỗ trợ theo dõi chi phí subscription. Kết quả phát hiện được đưa ra bằng thuật toán và cần bạn tự duyệt trước khi tin dùng cho quyết định tài chính.",
+      "Renlio không phải tổ chức tài chính, không đưa ra tư vấn đầu tư và không thực hiện giao dịch thay bạn. Việc huỷ một gói dịch vụ do bạn tự thực hiện trên trang của nhà cung cấp.",
+      "Bạn chịu trách nhiệm về dữ liệu mình tải lên và cam kết chỉ dùng sao kê thuộc quyền của mình.",
+      "Dịch vụ được cung cấp theo hiện trạng. Renlio nỗ lực đảm bảo độ chính xác nhưng không bảo đảm phát hiện được toàn bộ subscription của bạn."
+    ],
+    "backHome": "Về trang chủ"
+  }
+}

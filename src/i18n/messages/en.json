@@ -324,7 +324,9 @@
 
   "finalCta": {
     "title": "Your statement already knows. It takes 2 minutes for you to know too.",
-    "lead": "Paste your statement in the box above to see the real number, or leave your email and Renlio will warn you before the next charge."
+    "lead": "Paste your statement in the box above to see the real number, or leave your email and Renlio will warn you before the next charge.",
+    "leadSimple": "Paste your statement in the box above and see the real number. About two minutes, no account, no bank login.",
+    "cta": "Find my subscriptions"
   },
 
   "footer": {

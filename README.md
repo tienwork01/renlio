@@ -12,7 +12,7 @@ Trang tách rõ **dữ liệu vào bằng cách nào** khỏi **Renlio làm gì 
 | --- | --- |
 | Hero → Vấn đề | Tôi có đang mất tiền không? |
 | Thử ngay (demo) | Cái này có thật không? |
-| Nhắc lịch (thu email) | Tôi muốn được nhắc |
+| Nhắc lịch (thu email) | Tôi muốn được nhắc — *chỉ hiện khi bật thu email* |
 | **Nguồn dữ liệu (4 cách)** | **Trường hợp của tôi có được hỗ trợ không?** |
 | Dashboard | Kết quả trông như thế nào? |
 | Tính năng (3 việc) | Renlio làm gì với dữ liệu? |
@@ -73,6 +73,7 @@ src/
 │  └─ index.ts                 getMessages(), getTranslator()
 ├─ lib/
 │  ├─ detect.ts                engine phát hiện subscription
+│  ├─ flags.ts                 cờ bật/tắt thu email (chỉ dùng ở server component)
 │  ├─ samples.ts               2 sao kê mẫu (VN + quốc tế)
 │  ├─ format.ts                định dạng tiền và ngày
 │  └─ site.ts                  URL site, đường dẫn theo locale, id các section
@@ -129,11 +130,32 @@ Cho engine trả lời bằng AI:
 
 `sitemap.ts` phát 6 URL kèm `alternates.languages` để ghép đúng cặp hreflang.
 
+## Hai chế độ của trang
+
+Trang tự đổi chế độ theo biến `SUBSCRIBE_WEBHOOK_URL`, không cần sửa code:
+
+| | Chưa đặt biến (mặc định) | Đã đặt biến |
+| --- | --- | --- |
+| Chế độ | **Giới thiệu sản phẩm** | **Thu email** |
+| Section "Nhắc lịch thanh toán" | ẩn | hiện |
+| CTA cuối trang | nút dẫn xuống demo | ô nhập email |
+| Số thẻ `<form>` trong HTML | 0 | 2 |
+
+Lý do làm vậy: một form mà bấm vào chắc chắn lỗi thì tệ hơn hẳn không có form. Và hiện "đăng ký thành công" khi chưa lưu được gì thì còn tệ hơn nữa — người dùng sẽ ngồi chờ email nhắc lịch không bao giờ tới.
+
+Log build in rõ chế độ đang chạy:
+
+```
+▲ Renlio: SUBSCRIBE_WEBHOOK_URL chưa đặt — chế độ giới thiệu sản phẩm, không hiện form đăng ký nào.
+```
+
+Các trang là SSG nên giá trị được cố định lúc build: **đặt biến xong phải build/deploy lại** mới có hiệu lực.
+
 ## Trước khi chạy traffic
 
 1. **`NEXT_PUBLIC_SITE_URL`** — đặt trong `.env` (xem `.env.example`). Canonical, hreflang, sitemap và JSON-LD đều lấy từ biến này.
-2. **`SUBSCRIBE_WEBHOOK_URL`** — nơi thật để lưu email (Formspree, Airtable, Cloudflare Worker, n8n…). Chưa đặt thì `/api/subscribe` trả **503** và form hiện đúng trạng thái lỗi. Đây là cố ý: hiển thị "đăng ký thành công" khi chưa lưu được gì là lừa người dùng, và nếu chạy ads thì Google/Meta đánh destination mismatch.
-3. **Email đầu tiên gửi cho người đăng ký phải có giá trị thật** (bản tổng hợp chi phí của họ), không phải "cảm ơn đã đăng ký".
+2. **`SUBSCRIBE_WEBHOOK_URL`** — quyết định trang chạy ở chế độ nào (xem mục dưới). Để trống là hợp lệ.
+3. **Nếu bật thu email**: email đầu tiên gửi cho người đăng ký phải có giá trị thật (bản tổng hợp chi phí của họ), không phải "cảm ơn đã đăng ký".
 4. **Ba con số ở section Vấn đề** hiện là ước lượng nội bộ. Khi đã có traffic thật, thay bằng số do chính demo sinh ra ("người dùng Renlio trung bình tìm ra N gói, X₫/tháng") — đó là social proof thật, tự sinh, không cần bịa testimonial.
 5. Kiểm tra JSON-LD bằng [Rich Results Test](https://search.google.com/test/rich-results) sau khi deploy.
 

@@ -324,7 +324,9 @@
 
   "finalCta": {
     "title": "Sao kê của bạn biết hết. Mất 2 phút để bạn cũng biết.",
-    "lead": "Dán sao kê vào ô phía trên và xem con số thật, hoặc để lại email để Renlio nhắc bạn trước lần trừ tiền kế tiếp."
+    "lead": "Dán sao kê vào ô phía trên và xem con số thật, hoặc để lại email để Renlio nhắc bạn trước lần trừ tiền kế tiếp.",
+    "leadSimple": "Dán sao kê vào ô phía trên và xem con số thật. Khoảng 2 phút, không cần tạo tài khoản, không cần đăng nhập ngân hàng.",
+    "cta": "Xem subscription của tôi"
   },
 
   "footer": {

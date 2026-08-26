@@ -16,6 +16,7 @@ import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { getMessages, getTranslator } from "@/i18n";
 import { isLocale } from "@/i18n/config";
+import { LEAD_CAPTURE_ENABLED } from "@/lib/flags";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -42,7 +43,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Problem t={t} tList={tList} />
         {/* Demo là client component: engine chạy trong trình duyệt người dùng */}
         <Demo locale={locale} messages={messages} />
-        <Reminder t={t} locale={locale} messages={messages} />
+        {/* Section thu email chỉ tồn tại khi có nơi thật để lưu. Chưa cấu hình
+            thì đây là trang giới thiệu sản phẩm, không có form nào cả. */}
+        {LEAD_CAPTURE_ENABLED ? <Reminder t={t} locale={locale} messages={messages} /> : null}
         {/* Đặt ngay sau demo: người đọc vừa thấy cách sao kê hoạt động sẽ hỏi
             "còn gói không đi qua thẻ thì sao?" */}
         <Sources t={t} tList={tList} />

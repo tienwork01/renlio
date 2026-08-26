@@ -346,7 +346,7 @@
       "Renlio processes statement data to detect recurring charges. The analysis on the home page runs entirely in your browser: file contents are never sent to a Renlio server.",
       "When you sign up for payment reminders, Renlio stores your email address for exactly that purpose. You can request deletion at any time by writing to hello@renlio.site.",
       "Renlio does not sell, share or trade your spending data with any third party. Renlio does not store card numbers, account numbers or banking credentials.",
-      "This site does not currently use tracking cookies or third-party analytics. If that changes, this document will be updated before any new tool is enabled."
+      "This site uses Google Analytics to count visits and see where readers come from. It sets a cookie in your browser and sends traffic data to Google. It cannot read the statement you paste into the Try it section, because that runs entirely in your browser and is never sent anywhere. You can block Google Analytics with an ad blocker."
     ],
     "termsTitle": "Terms of use",
     "termsUpdated": "Last updated: 26 August 2026",

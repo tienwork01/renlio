@@ -59,6 +59,7 @@ src/
 │  ├─ icon.svg  robots.ts  sitemap.ts
 │  └─ ...
 ├─ components/
+│  ├─ analytics/               GoogleAnalytics (gtag.js qua next/script)
 │  ├─ layout/                  SiteHeader, SiteFooter, LocaleSwitch, MobileCta, LegalPage
 │  ├─ sections/                Hero, Problem, Demo, Reminder, Sources, DashboardPreview,
 │  │                           Features, Security, Pricing, Faq, FinalCta, SubscribeForm
@@ -74,10 +75,11 @@ src/
 ├─ lib/
 │  ├─ detect.ts                engine phát hiện subscription
 │  ├─ flags.ts                 cờ bật/tắt thu email (chỉ dùng ở server component)
+│  ├─ analytics.ts             ID Google Analytics + cờ chỉ chạy ở production
 │  ├─ samples.ts               2 sao kê mẫu (VN + quốc tế)
 │  ├─ format.ts                định dạng tiền và ngày
 │  └─ site.ts                  URL site, đường dẫn theo locale, id các section
-├─ proxy.ts                    chọn locale theo cookie → Accept-Language → IP
+├─ proxy.ts                    chọn locale theo cookie → IP country → Accept-Language
 └─ scripts/test-detect.ts
 ```
 
@@ -137,6 +139,17 @@ Cho engine trả lời bằng AI:
 - Câu trả lời FAQ đi thẳng vào nội dung ngay câu đầu, không dạo đầu.
 
 `sitemap.ts` phát 6 URL kèm `alternates.languages` để ghép đúng cặp hreflang.
+
+## Google Analytics
+
+GA4 gắn qua `next/script` với `strategy="afterInteractive"` ([GoogleAnalytics.tsx](src/components/analytics/GoogleAnalytics.tsx)), không nhét thẻ `<script>` thẳng vào `<head>` — script analytics không được phép chặn render, vì LCP là tín hiệu xếp hạng.
+
+Hai điểm cần biết:
+
+1. **Chỉ chạy ở production.** `npm run dev` không bắn dữ liệu. Nếu không chặn, mỗi lần chạy dev là một lượt truy cập giả — và số liệu những tuần đầu, lúc traffic thật còn ít, sẽ bị chính bạn làm nhiễu nặng nhất.
+2. **Đổi ID bằng `NEXT_PUBLIC_GA_ID`.** Để trống thì dùng giá trị mặc định trong [analytics.ts](src/lib/analytics.ts). ID đo lường không phải bí mật, nó luôn lộ trong source trang.
+
+Trang Chính sách quyền riêng tư đã được cập nhật để khớp: trước đây nó khẳng định trang không dùng công cụ phân tích của bên thứ ba, giữ nguyên câu đó sau khi gắn GA là công bố sai sự thật.
 
 ## Hai chế độ của trang
 

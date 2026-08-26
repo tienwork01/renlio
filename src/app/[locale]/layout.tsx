@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Be_Vietnam_Pro, Source_Sans_3 } from "next/font/google";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { getTranslator } from "@/i18n";
 import { LOCALES, OG_LOCALE, isLocale, type Locale } from "@/i18n/config";
 import { SITE, absoluteUrl, localePath } from "@/lib/site";
@@ -83,7 +84,10 @@ export default async function LocaleLayout({
         <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0f0e0c" media="(prefers-color-scheme: dark)" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

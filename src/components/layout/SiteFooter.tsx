@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Section";
 import { Logo } from "@/components/ui/Logo";
 import type { Translator } from "@/i18n";
-import { SECTION_IDS, localePath } from "@/lib/site";
+import { SECTION_IDS, SITE, localePath } from "@/lib/site";
 
 export function SiteFooter({ t, locale }: Pick<Translator, "t" | "locale">) {
   const productLinks = [
@@ -21,7 +21,14 @@ export function SiteFooter({ t, locale }: Pick<Translator, "t" | "locale">) {
           <div>
             <Logo locale={locale} />
             <p className="mt-3 max-w-md">{t("footer.tagline")}</p>
-            <address className="mt-3 not-italic">{t("footer.contact")}</address>
+            {/* Email lấy từ SITE.email chứ không nằm trong file dịch: một nguồn
+                sự thật duy nhất, đổi một chỗ là đổi hết mọi nơi. */}
+            <address className="mt-3 not-italic">
+              {t("footer.contactLabel")}:{" "}
+              <a href={`mailto:${SITE.email}`} className="no-underline hover:text-brand-600 hover:underline">
+                {SITE.email}
+              </a>
+            </address>
           </div>
 
           <nav aria-labelledby="footer-product">

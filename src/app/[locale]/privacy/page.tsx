@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { LegalPage } from "@/components/layout/LegalPage";
 import { getTranslator } from "@/i18n";
 import { isLocale, type Locale } from "@/i18n/config";
-import { localePath } from "@/lib/site";
+import { SITE, localePath } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -41,7 +41,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       locale={locale}
       title={t("legal.privacyTitle")}
       updated={t("legal.privacyUpdated")}
-      paragraphs={tList<string>("legal.privacyBody")}
+      paragraphs={tList<string>("legal.privacyBody").map((text) => text.replaceAll("{email}", SITE.email))}
     />
   );
 }

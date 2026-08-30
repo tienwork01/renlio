@@ -37,7 +37,7 @@ function normalizeSiteUrl(raw: string | undefined): string {
 export const SITE = {
   name: "Renlio",
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
-  email: "hello@renlio.site",
+  email: "nguyencongtien01it@gmail.com",
 };
 
 export function localePath(locale: Locale, path = ""): string {

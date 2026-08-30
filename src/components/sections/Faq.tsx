@@ -17,7 +17,7 @@ export function Faq({ t, tList }: Pick<Translator, "t" | "tList">) {
 
   return (
     <Section id={SECTION_IDS.faq} labelledBy="faq-title">
-      <SectionHead center eyebrow={t("faq.eyebrow")} title={t("faq.title")} titleId="faq-title" />
+      <SectionHead align="center" eyebrow={t("faq.eyebrow")} title={t("faq.title")} titleId="faq-title" />
 
       <div className="mx-auto grid max-w-3xl gap-3">
         {items.map((item) => (

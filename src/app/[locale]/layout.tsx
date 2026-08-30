@@ -14,7 +14,9 @@ import "../globals.css";
  */
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["500", "600", "700"],
+  // Chỉ 600 và 700: `font-medium` không xuất hiện ở đâu trong mã, nên weight
+  // 500 chỉ làm nặng thêm mà không ai nhìn thấy.
+  weight: ["600", "700"],
   variable: "--font-be-vietnam-pro",
   display: "swap",
 });

@@ -1,5 +1,4 @@
 import { Section, SectionHead } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
 import type { Translator } from "@/i18n";
 import { SECTION_IDS } from "@/lib/site";
 
@@ -19,15 +18,13 @@ export function DashboardPreview({ t, tList }: Pick<Translator, "t" | "tList">) 
   return (
     <Section id={SECTION_IDS.dashboard} labelledBy="dashboard-title">
       <SectionHead
-        center
         eyebrow={t("dashboard.eyebrow")}
         title={t("dashboard.title")}
         titleId="dashboard-title"
         lead={t("dashboard.lead")}
       />
 
-      <Reveal>
-        <figure className="m-0">
+      <figure className="rise m-0">
           <div className="overflow-x-auto rounded-2xl border border-line bg-surface-2 p-3 shadow-lift">
             <svg
               viewBox="0 0 900 470"
@@ -136,7 +133,6 @@ export function DashboardPreview({ t, tList }: Pick<Translator, "t" | "tList">) 
           </div>
           <figcaption className="mt-3 text-center text-sm text-muted">{t("dashboard.caption")}</figcaption>
         </figure>
-      </Reveal>
     </Section>
   );
 }

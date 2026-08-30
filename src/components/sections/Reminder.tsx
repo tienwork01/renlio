@@ -15,7 +15,7 @@ export function Reminder({
   return (
     <Section id={SECTION_IDS.reminder} labelledBy="reminder-title">
       <SectionHead
-        center
+        align="center"
         eyebrow={t("reminder.eyebrow")}
         title={t("reminder.title")}
         titleId="reminder-title"

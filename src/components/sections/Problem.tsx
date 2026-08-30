@@ -6,29 +6,42 @@ interface Stat {
   label: string;
 }
 
+/**
+ * Ba con số, không đóng khung trong card.
+ *
+ * Card làm con số trông như một mục trong danh sách. Bỏ khung đi, để cỡ chữ
+ * và khoảng trắng làm việc, rồi chỉ dùng một đường kẻ mảnh phân tách — con số
+ * trở thành khoảnh khắc, không phải một ô nữa.
+ */
 export function Problem({ t, tList }: Pick<Translator, "t" | "tList">) {
   const stats = tList<Stat>("problem.stats");
 
   return (
     <Section id="problem" labelledBy="problem-title">
       <SectionHead
-        center
         eyebrow={t("problem.eyebrow")}
         title={t("problem.title")}
         titleId="problem-title"
         lead={t("problem.lead")}
       />
 
-      <div className="grid gap-4 sm:grid-cols-3">
-        {stats.map((stat) => (
-          <article key={stat.value} className="rounded-2xl border border-line bg-surface p-6">
-            <strong className="num mb-2 block font-heading text-[clamp(2rem,1.6rem+1.8vw,2.75rem)] leading-none tracking-[-0.03em] text-money">
+      <dl className="rise-stagger grid gap-10 md:grid-cols-3 md:gap-8">
+        {stats.map((stat, index) => (
+          <div
+            key={stat.value}
+            className={
+              index > 0
+                ? "border-line pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-8 max-md:border-t"
+                : ""
+            }
+          >
+            <dt className="num display mb-3 font-heading text-[clamp(2.4rem,1.8rem+2.4vw,3.5rem)] font-bold text-ink">
               {stat.value}
-            </strong>
-            <span className="block text-[0.9375rem] text-muted">{stat.label}</span>
-          </article>
+            </dt>
+            <dd className="m-0 text-[0.9375rem] text-muted">{stat.label}</dd>
+          </div>
         ))}
-      </div>
+      </dl>
     </Section>
   );
 }

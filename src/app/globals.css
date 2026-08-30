@@ -177,7 +177,14 @@
     font-size: 1.0625rem;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    /*
+     * `clip` thay vì `hidden`: cả hai đều cắt phần tràn ngang, nhưng `hidden`
+     * biến body thành scroll container, làm hỏng `animation-timeline: view()`
+     * của phần hiện dần khi cuộn. Dòng `hidden` giữ lại làm dự phòng cho
+     * trình duyệt cũ chưa hiểu `clip`.
+     */
     overflow-x: hidden;
+    overflow-x: clip;
   }
 
   h1,
@@ -218,17 +225,104 @@
     font-feature-settings: "tnum" 1;
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition:
-      opacity 500ms ease,
-      transform 500ms ease;
+  /* Chữ display: âm letter-spacing mạnh, dùng cho h1 và các con số lớn */
+  .display {
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    text-wrap: balance;
   }
 
-  .reveal-in {
+  /* Nhãn nhỏ chữ hoa, tạo tương phản với chữ display */
+  .label {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Đường kẻ mảnh 1px thật ở mọi mật độ điểm ảnh */
+  .hairline {
+    border-color: color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+}
+
+/* ==================================================================
+   Chiều sâu: quầng sáng + hạt nhiễu
+   Cả hai đều thuần CSS, không tải thêm file ảnh nào.
+   ================================================================== */
+
+/* Quầng sáng toả từ hai điểm, đặt sau nội dung. Dùng cho khối tối. */
+.glow {
+  position: relative;
+  isolation: isolate;
+}
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 18% 12%, color-mix(in srgb, var(--brand-600) 22%, transparent), transparent 70%),
+    radial-gradient(50% 50% at 88% 78%, color-mix(in srgb, var(--money) 14%, transparent), transparent 72%);
+}
+
+/*
+ * Hạt nhiễu rất nhẹ để nền tối không bị "phẳng chết".
+ * Tile 120x120 nên trình duyệt chỉ rasterize một lần rồi lặp — rẻ hơn nhiều
+ * so với phủ feTurbulence lên cả màn hình.
+ */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ==================================================================
+   Hiện dần khi cuộn — thuần CSS, không cần JavaScript
+   `animation-timeline: view()` chạy trên compositor nên không đụng main
+   thread. Trình duyệt chưa hỗ trợ thì nội dung hiện bình thường ngay từ
+   đầu, vì opacity:0 chỉ tồn tại bên trong @supports.
+   ================================================================== */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 20%;
+    }
+
+    /* Lệch pha cho các phần tử trong cùng một lưới */
+    .rise-stagger > * {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 24%;
+    }
+    .rise-stagger > *:nth-child(2) {
+      animation-range: entry 4% cover 26%;
+    }
+    .rise-stagger > *:nth-child(3) {
+      animation-range: entry 6% cover 28%;
+    }
+    .rise-stagger > *:nth-child(4) {
+      animation-range: entry 8% cover 30%;
+    }
   }
 }
 
@@ -243,10 +337,5 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }

@@ -148,7 +148,7 @@ export function Demo({ locale, messages }: DemoProps) {
   }
 
   return (
-    <Section id="demo" labelledBy="demo-title" invert>
+    <Section id="demo" labelledBy="demo-title" tone="ink" glow>
       <SectionHead
         eyebrow={t("demo.eyebrow")}
         title={t("demo.title")}

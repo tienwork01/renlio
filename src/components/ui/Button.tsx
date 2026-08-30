@@ -1,7 +1,7 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
 type Variant = "primary" | "ghost" | "inverse";
-type Size = "md" | "sm";
+type Size = "lg" | "md" | "sm";
 
 interface StyleProps {
   variant?: Variant;
@@ -24,6 +24,7 @@ const VARIANTS: Record<Variant, string> = {
 };
 
 const SIZES: Record<Size, string> = {
+  lg: "px-7 py-4 text-[1.0625rem]",
   md: "px-5.5 py-3.5 text-base",
   sm: "px-3.5 py-2 text-[0.9375rem]",
 };

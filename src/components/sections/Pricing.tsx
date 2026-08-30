@@ -9,7 +9,7 @@ export function Pricing({ t, tList }: Pick<Translator, "t" | "tList">) {
 
   return (
     <Section id={SECTION_IDS.pricing} labelledBy="pricing-title">
-      <SectionHead center eyebrow={t("pricing.eyebrow")} title={t("pricing.title")} titleId="pricing-title" />
+      <SectionHead align="center" eyebrow={t("pricing.eyebrow")} title={t("pricing.title")} titleId="pricing-title" />
 
       <div className="mx-auto max-w-md rounded-2xl border-2 border-brand-600 bg-surface p-8 text-center shadow-lift">
         <h3 className="text-xl">{t("pricing.planName")}</h3>
